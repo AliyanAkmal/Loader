@@ -44,14 +44,25 @@ const Loader = ({ isActive }) => {
   return (
     <Box
       sx={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        // transform: "translate(-50%,-50%)",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%,-50%)",
+        backdropFilter: isActive ? "blur(0.5px)" : "none",
+        backgroundColor: isActive ? "rgba(0, 0, 0, 0.5)" : "transparent",
+
+        zIndex: 1,
       }}
     >
-      <Box className={classes.mainContainer}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+
+          zIndex: 2,
+        }}
+      >
         <Box
           sx={{
             animation: isActive ? `${opacityChange} 0.8s infinite` : "none",

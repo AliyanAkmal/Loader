@@ -1,10 +1,11 @@
-// import Card from "./components/card/card";
-
-import { useState } from "react";
 import Loader from "./components/loader";
+import { Box } from "@mui/material";
 
 function App() {
-  const [isActive, setActive] = useState(true);
-  return <Loader isActive={isActive} />;
+  return (
+    <Box>
+      <Loader />
+    </Box>
+  );
 }
 export default App;
